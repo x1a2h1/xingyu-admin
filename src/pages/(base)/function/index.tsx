@@ -5,7 +5,7 @@ const Function = () => {
 };
 
 export const loader = () => {
-  replace('event-bus');
+  return replace('event-bus');
 };
 
 export default Function;
