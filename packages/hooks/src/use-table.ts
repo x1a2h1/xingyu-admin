@@ -51,6 +51,8 @@ export type TableConfig<A extends ApiFn, T, C> = {
    * @default true
    */
   immediate?: boolean;
+  /** Whether to change the address bar parameter */
+  isChangeURL?: boolean;
   /**
    * callback when response fetched
    *
@@ -62,7 +64,7 @@ export type TableConfig<A extends ApiFn, T, C> = {
 };
 
 export default function useHookTable<A extends ApiFn, T, C>(config: TableConfig<A, T, C>) {
-  const { apiFn, apiParams, getColumnChecks, getColumns, immediate = true, transformer } = config;
+  const { apiFn, apiParams, getColumnChecks, getColumns, immediate = true, isChangeURL, transformer } = config;
 
   const { endLoading, loading, startLoading } = useLoading();
 
@@ -90,7 +92,9 @@ export default function useHookTable<A extends ApiFn, T, C>(config: TableConfig<
 
     const formattedParams = formatSearchParams(searchParams.current);
 
-    setSearchParams(formattedParams as URLSearchParamsInit);
+    if (isChangeURL) {
+      setSearchParams(formattedParams as URLSearchParamsInit);
+    }
 
     const response = await apiFn(formattedParams);
 

@@ -8,14 +8,17 @@ import { getIsMobile } from '@/layouts/appStore';
 type TableData = AntDesign.TableData;
 type GetTableData<A extends AntDesign.TableApiFn> = AntDesign.GetTableData<A>;
 type TableColumn<T> = AntDesign.TableColumn<T>;
+type Config<A extends AntDesign.TableApiFn> = AntDesign.AntDesignTableConfig<A> & {
+  isChangeURL?: boolean;
+};
 
 export function useTable<A extends AntDesign.TableApiFn>(
-  config: AntDesign.AntDesignTableConfig<A>,
+  config: Config<A>,
   paginationConfig?: Omit<TablePaginationConfig, 'current' | 'onChange' | 'pageSize' | 'total'>
 ) {
   const isMobile = useAppSelector(getIsMobile);
 
-  const { apiFn, apiParams, immediate, rowKey = 'id' } = config;
+  const { apiFn, apiParams, immediate, isChangeURL = true, rowKey = 'id' } = config;
 
   const [form] = Form.useForm<AntDesign.AntDesignTableConfig<A>['apiParams']>();
 
@@ -69,6 +72,7 @@ export function useTable<A extends AntDesign.TableApiFn>(
       return filteredColumns as TableColumn<AntDesign.TableDataWithIndex<GetTableData<A>>>[];
     },
     immediate,
+    isChangeURL,
     transformer: res => {
       const { current = 1, records = [], size = 10, total: totalNum = 0 } = res.data || {};
 
