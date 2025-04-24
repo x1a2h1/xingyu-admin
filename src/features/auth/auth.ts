@@ -41,7 +41,7 @@ export function useInitAuth() {
 
   const dispatch = useAppDispatch();
 
-  const { navigate } = useRouter();
+  const { replace } = useRouter();
 
   const redirectUrl = searchParams.get('redirect');
 
@@ -66,9 +66,9 @@ export function useInitAuth() {
 
         if (redirect) {
           if (redirectUrl) {
-            navigate(redirectUrl);
+            replace(redirectUrl);
           } else {
-            navigate('/');
+            replace('/');
           }
         }
 
