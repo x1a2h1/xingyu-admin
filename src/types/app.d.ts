@@ -228,6 +228,8 @@ declare namespace App {
       icon?: string;
       /** The tab id */
       id: string;
+      /** is keepAlive */
+      keepAlive: boolean;
       /** The tab label */
       label: string;
       /**

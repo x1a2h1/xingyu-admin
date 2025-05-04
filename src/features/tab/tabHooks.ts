@@ -14,9 +14,10 @@ import {
 import { localStg } from '@/utils/storage';
 
 import { getActiveFirstLevelMenuKey } from '../menu/MenuUtil';
+import { setRemoveCacheKey } from '../router/routeStore';
 import { useThemeSettings } from '../theme';
 
-import { filterTabsById, filterTabsByIds, getFixedTabs, getTabByRoute, isTabInTabs } from './shared';
+import { getFixedTabs, getTabByRoute, isTabInTabs } from './shared';
 import { TabEvent } from './tabEnum';
 
 export function useUpdateTabs() {
@@ -77,22 +78,28 @@ export function useTabActions() {
   function _clearTabs(excludes: string[] = []) {
     const remainTabIds = [..._fixedTabs.map(tab => tab.id), ...excludes];
 
-    const removedTabsIds = _tabIds.filter(id => !remainTabIds.includes(id));
+    // ② 单次遍历拆分：收集待删除 tab，收集 keepAlive‑cache key
+    const removeKeepKeys: string[] = [];
+    const updatedTabs: App.Global.Tab[] = [];
 
-    const isRemoveActiveTab = removedTabsIds.includes(activeTabId);
+    for (const tab of tabs) {
+      if (remainTabIds.includes(tab.id)) {
+        updatedTabs.push(tab);
+      } else if (tab.keepAlive) removeKeepKeys.push(tab.routePath);
+    }
 
-    const updatedTabs = filterTabsByIds(removedTabsIds, tabs);
+    // 如果一次都没删，直接返回
+    if (updatedTabs.length === tabs.length) return;
 
-    if (!isRemoveActiveTab) {
-      updateTabs(updatedTabs);
-    } else {
-      const activeTab = updatedTabs.at(-1);
+    // ③ 处理激活页逻辑
+    if (!remainTabIds.includes(activeTabId)) {
+      const newActive = updatedTabs.at(-1);
+      if (newActive) switchRouteByTab(newActive);
+    }
+    updateTabs(updatedTabs);
 
-      if (activeTab) {
-        switchRouteByTab(activeTab);
-
-        updateTabs(updatedTabs);
-      }
+    if (removeKeepKeys.length > 0) {
+      dispatch(setRemoveCacheKey(removeKeepKeys));
     }
   }
 
@@ -137,23 +144,10 @@ export function useTabActions() {
    * @param tabId
    */
   function removeTabById(tabId: string) {
-    const isRemoveActiveTab = activeTabId === tabId;
+    const excludes = _tabIds // 除了要删的，其余都保留
+      .filter(t => t !== tabId);
 
-    const updatedTabs = filterTabsById(tabId, tabs);
-
-    if (!isRemoveActiveTab) {
-      // 如果删除的不是激活的标签页，则更新标签页
-      updateTabs(updatedTabs);
-    } else {
-      // 如果删除的是激活的标签页，则切换到最后一个标签页或者首页标签页
-      const activeTab = updatedTabs.at(-1);
-
-      if (activeTab) {
-        switchRouteByTab(activeTab);
-
-        updateTabs(updatedTabs);
-      }
-    }
+    _clearTabs(excludes);
   }
 
   function removeActiveTab() {

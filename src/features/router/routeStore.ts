@@ -4,7 +4,7 @@ import { createAppSlice } from '../../store/createAppSlice';
 
 interface InitialStateType {
   cacheRoutes: string[];
-  removeCacheKey: string | null;
+  removeCacheKey: string[] | string | null;
   routeHomePath: string;
 }
 
@@ -31,7 +31,7 @@ export const routeSlice = createAppSlice({
     setHomePath: create.reducer((state, { payload }: PayloadAction<string>) => {
       state.routeHomePath = payload;
     }),
-    setRemoveCacheKey: create.reducer((state, { payload }: PayloadAction<string | null>) => {
+    setRemoveCacheKey: create.reducer((state, { payload }: PayloadAction<InitialStateType['removeCacheKey']>) => {
       state.removeCacheKey = payload;
     })
   }),

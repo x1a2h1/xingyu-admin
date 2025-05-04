@@ -1,16 +1,6 @@
 import type { LastLevelRouteKey, RouteMap } from '@soybean-react/vite-plugin-react-router';
 
 /**
- * Filter tabs by id
- *
- * @param tabId
- * @param tabs
- */
-export function filterTabsById(tabId: string, tabs: App.Global.Tab[]) {
-  return tabs.filter(tab => tab.id !== tabId);
-}
-
-/**
  * Get fixed tab ids
  *
  * @param tabs
@@ -28,15 +18,6 @@ export function getFixedTabIds(tabs: App.Global.Tab[]) {
  */
 export function getFixedTabs(tabs: App.Global.Tab[]) {
   return tabs.filter(tab => tab.fixedIndex || tab.fixedIndex === 0);
-}
-/**
- * Filter tabs by ids
- *
- * @param tabIds
- * @param tabs
- */
-export function filterTabsByIds(tabIds: string[], tabs: App.Global.Tab[]) {
-  return tabs.filter(tab => !tabIds.includes(tab.id));
 }
 
 /**
@@ -70,7 +51,7 @@ export function getRouteIcons(route: Router.Route) {
 export function getTabByRoute(route: Router.Route) {
   const { fullPath, handle, id, pathname } = route;
 
-  const { fixedIndexInTab, i18nKey, title } = handle;
+  const { fixedIndexInTab, i18nKey, keepAlive = false, title } = handle;
 
   let fixedIndex = fixedIndexInTab;
 
@@ -87,6 +68,7 @@ export function getTabByRoute(route: Router.Route) {
     i18nKey,
     icon,
     id: handle.multiTab ? fullPath : pathname,
+    keepAlive,
     label: title,
     localIcon,
     newLabel: '',

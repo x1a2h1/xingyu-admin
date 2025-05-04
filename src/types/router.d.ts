@@ -40,7 +40,7 @@ declare namespace Router {
     /** Icon size. width and height are the same. */
     iconFontSize?: number;
     /** Whether to cache the route */
-    keepAlive?: boolean | null;
+    keepAlive?: boolean;
     /**
      * Local icon
      *
