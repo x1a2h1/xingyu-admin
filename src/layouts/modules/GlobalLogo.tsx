@@ -14,7 +14,7 @@ const GlobalLogo: FC<Props> = memo(({ className, showTitle = true, ...props }) =
   return (
     <Link
       className={clsx('w-full flex-center nowrap-hidden', className)}
-      to="/"
+      to={import.meta.env.VITE_ROUTE_HOME}
       {...props}
     >
       <SystemLogo className="text-32px text-primary" />
