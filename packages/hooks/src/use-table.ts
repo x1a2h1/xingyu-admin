@@ -93,7 +93,7 @@ export default function useHookTable<A extends ApiFn, T, C>(config: TableConfig<
     const formattedParams = formatSearchParams(searchParams.current);
 
     if (isChangeURL) {
-      setSearchParams(formattedParams as URLSearchParamsInit);
+      setSearchParams(formattedParams as URLSearchParamsInit, { replace: true });
     }
 
     const response = await apiFn(formattedParams);
