@@ -121,7 +121,11 @@ export default function useHookTable<A extends ApiFn, T, C>(config: TableConfig<
 
   /** reset search params */
   function resetSearchParams() {
-    Object.assign(searchParams.current, apiParams);
+    const { current, size } = searchParams.current; // 保留分页信息
+
+    // 用默认 apiParams 重建对象，再把 current/size 覆盖回去
+    searchParams.current = { current, size };
+
     getData();
   }
 

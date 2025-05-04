@@ -108,9 +108,8 @@ export function useTable<A extends AntDesign.TableApiFn>(
     total,
     ...paginationConfig
   };
-
   function reset() {
-    form.resetFields();
+    form.setFieldsValue(apiParams as NonNullable<Parameters<A>[0]>);
 
     resetSearchParams();
   }
