@@ -206,6 +206,10 @@ export function useEcharts<T extends ECOption>(optionsFactory: () => T, hooks: C
 
     // render chart
     await render();
+
+    if (chart.current) {
+      await onUpdated?.(chart.current);
+    }
   }
   useUnmount(() => {
     destroy();
