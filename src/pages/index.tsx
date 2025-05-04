@@ -4,7 +4,7 @@ const Index = () => {
   return (
     <Navigate
       replace
-      to="/home"
+      to={import.meta.env.VITE_ROUTE_HOME}
     />
   );
 };
