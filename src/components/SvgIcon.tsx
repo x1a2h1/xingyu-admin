@@ -1,6 +1,8 @@
 import { Icon } from '@iconify/react';
 import type { CSSProperties } from 'react';
 
+import { globalConfig } from '@/config';
+
 interface Props {
   readonly className?: string;
   /** Iconify icon name */
@@ -11,13 +13,10 @@ interface Props {
 }
 
 const defaultLocalIcon = 'no-icon';
-
-const { VITE_ICON_LOCAL_PREFIX: prefix } = import.meta.env;
-
 const symbolId = (localIcon: string = defaultLocalIcon) => {
   const iconName = localIcon || defaultLocalIcon;
 
-  return `#${prefix}-${iconName}`;
+  return `#${globalConfig.localIconPrefix}-${iconName}`;
 };
 
 /**

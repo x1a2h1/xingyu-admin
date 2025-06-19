@@ -2,6 +2,7 @@ import { createSelector, createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { getPaletteColorByNumber } from '@sa/color';
 
+import { globalConfig } from '@/config';
 import type { AppThunk } from '@/store';
 import { localStg } from '@/utils/storage';
 
@@ -162,9 +163,7 @@ export const settingsJson = createSelector([getThemeSettings], settings => {
 
 /** Cache theme settings */
 export const cacheThemeSettings = (): AppThunk => (_, getState) => {
-  const isProd = import.meta.env.PROD;
-
-  if (!isProd) return;
+  if (globalConfig.isDev) return;
 
   localStg.set('themeSettings', getThemeSettings(getState()));
 };

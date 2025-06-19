@@ -1,6 +1,7 @@
 import type { ThemeModeType } from 'ahooks/lib/useTheme';
 import { createContext } from 'react';
 
+import { globalConfig } from '@/config';
 import { DARK_CLASS } from '@/constants/common';
 
 export type ThemeContextType = {
@@ -11,10 +12,10 @@ export type ThemeContextType = {
 };
 
 export const ThemeContext = createContext<ThemeContextType>({
-  darkMode: false,
-  setThemeScheme: () => {},
+  darkMode: globalConfig.defaultDarkMode,
+  setThemeScheme: globalConfig.noop,
   themeScheme: 'light',
-  toggleThemeScheme: () => {}
+  toggleThemeScheme: globalConfig.noop
 });
 
 export const icons: Record<ThemeModeType, string> = {

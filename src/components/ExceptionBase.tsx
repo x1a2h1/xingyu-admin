@@ -1,3 +1,5 @@
+import { globalConfig } from '@/config';
+
 import SvgIcon from './SvgIcon';
 
 type ExceptionType = '403' | '404' | '500';
@@ -22,7 +24,7 @@ const ExceptionBase: FC<Props> = memo(({ type }) => {
   const nav = useNavigate();
 
   const onClick = () => {
-    nav('/');
+    nav(globalConfig.homePath);
   };
 
   return (

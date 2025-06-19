@@ -1,6 +1,7 @@
 import type { RouterNavigateOptions, To } from 'react-router-dom';
 import { createBrowserRouter, matchRoutes } from 'react-router-dom';
 
+import { globalConfig } from '@/config';
 import { initCacheRoutes, routes } from '@/router';
 import { store } from '@/store';
 
@@ -91,7 +92,7 @@ function navigator() {
   }
 
   function goHome() {
-    reactRouter.navigate('/');
+    reactRouter.navigate(globalConfig.homePath);
   }
 
   // eslint-disable-next-line max-params

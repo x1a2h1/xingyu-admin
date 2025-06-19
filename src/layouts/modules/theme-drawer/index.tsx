@@ -21,12 +21,14 @@ const ThemeDrawer = memo(() => {
   }
 
   useMount(() => {
-    window.addEventListener('beforeunload', () => {
+    const saveThemeSettings = () => {
       dispatch(cacheThemeSettings());
-    });
+    };
+
+    window.addEventListener('beforeunload', saveThemeSettings);
 
     return () => {
-      window.removeEventListener('beforeunload', () => {});
+      window.removeEventListener('beforeunload', saveThemeSettings);
     };
   });
 
