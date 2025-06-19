@@ -95,9 +95,7 @@ export function useTabActions() {
     if (!remainTabIds.includes(activeTabId)) {
       const currentIndex = tabs.findIndex(tab => tab.id === activeTabId);
 
-      const fallbackTab = tabs[currentIndex + 1] ?? tabs[currentIndex - 1];
-
-      const newActive = updatedTabs.find(tab => tab.id === fallbackTab?.id) || updatedTabs.at(-1);
+      const newActive = tabs[currentIndex + 1] || tabs[currentIndex - 1] || updatedTabs.at(-1);
 
       if (newActive) switchRouteByTab(newActive);
     }
