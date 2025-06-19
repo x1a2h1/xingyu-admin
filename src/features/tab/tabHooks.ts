@@ -40,15 +40,15 @@ export function useTabActions() {
 
   const tabs = useAppSelector(selectTabs);
 
-  const _fixedTabs = getFixedTabs(tabs);
-
   const updateTabs = useUpdateTabs();
-
-  const _tabIds = tabs.map(tab => tab.id);
 
   const { navigate } = useRouter();
 
   const activeTabId = useAppSelector(selectActiveTabId);
+
+  const _fixedTabs = getFixedTabs(tabs);
+
+  const _tabIds = tabs.map(tab => tab.id);
 
   /**
    * 切换激活的标签页
@@ -94,8 +94,10 @@ export function useTabActions() {
     // ③ 处理激活页逻辑
     if (!remainTabIds.includes(activeTabId)) {
       const currentIndex = tabs.findIndex(tab => tab.id === activeTabId);
-      const nextTabId = tabs[currentIndex + 1]?.id || tabs[currentIndex - 1]?.id;
-      const newActive = nextTabId ? updatedTabs.find(tab => tab.id === nextTabId) : updatedTabs.at(-1);
+
+      const fallbackTab = tabs[currentIndex + 1] ?? tabs[currentIndex - 1];
+
+      const newActive = updatedTabs.find(tab => tab.id === fallbackTab?.id) || updatedTabs.at(-1);
 
       if (newActive) switchRouteByTab(newActive);
     }
@@ -235,9 +237,8 @@ export function initTab(cache: boolean, updateTabs: (tabs: App.Global.Tab[]) => 
   const storageTabs = localStg.get('globalTabs');
 
   if (cache && storageTabs) {
-    // const tabs = extractTabsByAllRoutes(router.getAllRouteNames(), storageTabs);
-    // dispatch(setTabs(tabs));
     updateTabs(storageTabs);
+
     return storageTabs;
   }
 
@@ -269,9 +270,9 @@ export function useTabManager() {
 
   const dispatch = useAppDispatch();
 
-  const _route = useRoute();
-
   const updateTabs = useUpdateTabs();
+
+  const _route = useRoute();
 
   function _addTab(route: Router.Route) {
     const tab = getTabByRoute(route);
