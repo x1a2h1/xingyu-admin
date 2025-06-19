@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-import { localStg } from '@/utils/storage';
+import { globalConfig } from '@/config';
 
 export type LangContextType = {
   locale: App.I18n.LangType;
@@ -9,18 +9,9 @@ export type LangContextType = {
 };
 
 export const LangContext = createContext<LangContextType>({
-  locale: localStg.get('lang') || 'zh-CN',
-  localeOptions: [
-    {
-      key: 'zh-CN',
-      label: '中文'
-    },
-    {
-      key: 'en-US',
-      label: 'English'
-    }
-  ],
-  setLocale: () => {}
+  locale: globalConfig.defaultLang,
+  localeOptions: globalConfig.defaultLangOptions,
+  setLocale: globalConfig.noop
 });
 
 export function useLang() {

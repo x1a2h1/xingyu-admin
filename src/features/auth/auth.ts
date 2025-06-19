@@ -1,5 +1,6 @@
 import { useLoading } from '@sa/hooks';
 
+import { globalConfig } from '@/config';
 import { getIsLogin, selectUserInfo } from '@/features/auth/authStore';
 import { usePreviousRoute, useRouter } from '@/features/router';
 import { fetchGetUserInfo, fetchLogin } from '@/service/api';
@@ -68,7 +69,7 @@ export function useInitAuth() {
           if (redirectUrl) {
             replace(redirectUrl);
           } else {
-            replace('/');
+            replace(globalConfig.homePath);
           }
         }
 

@@ -1,19 +1,14 @@
 import { Navigate } from 'react-router-dom';
 
+import { globalConfig } from '@/config';
+
 const Index = () => {
   return (
     <Navigate
       replace
-      to={import.meta.env.VITE_ROUTE_HOME}
+      to={globalConfig.homePath}
     />
   );
-};
-
-export const handle = {
-  constant: true,
-  hideInMenu: true,
-  i18nKey: 'route.index',
-  title: 'index'
 };
 
 export default Index;

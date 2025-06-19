@@ -1,5 +1,6 @@
 import { BACKEND_ERROR_CODE, createFlatRequest, createRequest } from '@sa/axios';
 
+import { globalConfig } from '@/config';
 import { getServiceBaseURL } from '@/utils/service';
 import { localStg } from '@/utils/storage';
 
@@ -7,7 +8,7 @@ import { backEndFail, handleError } from './error';
 import { getAuthorization } from './shared';
 import type { RequestInstanceState } from './type';
 
-const isHttpProxy = import.meta.env.DEV && import.meta.env.VITE_HTTP_PROXY === 'Y';
+const isHttpProxy = globalConfig.isDev && import.meta.env.VITE_HTTP_PROXY === 'Y';
 const { baseURL, otherBaseURL } = getServiceBaseURL(import.meta.env, isHttpProxy);
 
 export const request = createFlatRequest<App.Service.Response, RequestInstanceState>(

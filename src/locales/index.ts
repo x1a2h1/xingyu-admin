@@ -1,7 +1,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-import { localStg } from '@/utils/storage';
+import { globalConfig } from '@/config';
 
 import locales from './locale';
 
@@ -13,7 +13,7 @@ export async function setupI18n() {
     interpolation: {
       escapeValue: false
     },
-    lng: localStg.get('lang') || 'zh-CN',
+    lng: globalConfig.defaultLang,
     resources: locales
   });
 }

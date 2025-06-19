@@ -3,22 +3,20 @@ import { getRgb } from '@sa/color';
 import clsx from 'clsx';
 
 import SystemLogo from '@/components/SystemLogo';
+import { globalConfig } from '@/config';
 import { DARK_CLASS } from '@/constants/app';
 import { toggleHtmlClass } from '@/utils/common';
-import { localStg } from '@/utils/storage';
 
 const GlobalLoading = memo(() => {
   const { t } = useTranslation();
 
-  const themeColor = localStg.get('themeColor') || '#646cff';
+  const { defaultDarkMode, defaultThemeColor } = globalConfig;
 
-  const darkMode = localStg.get('darkMode') || false;
-
-  if (darkMode) {
+  if (defaultDarkMode) {
     toggleHtmlClass(DARK_CLASS).add();
   }
 
-  const { b, g, r } = getRgb(themeColor);
+  const { b, g, r } = getRgb(defaultThemeColor);
 
   const loadingClasses = [
     'left-0 top-0',

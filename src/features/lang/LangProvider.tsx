@@ -1,23 +1,13 @@
 import type { FC, PropsWithChildren } from 'react';
 
+import { globalConfig } from '@/config';
 import { setLng } from '@/locales';
 import { localStg } from '@/utils/storage';
 
 import { LangContext } from './langContext';
 
-const localeOptions = [
-  {
-    key: 'zh-CN',
-    label: '中文'
-  },
-  {
-    key: 'en-US',
-    label: 'English'
-  }
-] satisfies App.I18n.LangOption[];
-
 const LangProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [locale, setLocale] = useState<App.I18n.LangType>(localStg.get('lang') || 'zh-CN');
+  const [locale, setLocale] = useState<App.I18n.LangType>(globalConfig.defaultLang);
 
   function changeLocale(lang: App.I18n.LangType) {
     setLng(lang);
@@ -27,7 +17,17 @@ const LangProvider: FC<PropsWithChildren> = ({ children }) => {
     localStg.set('lang', lang);
   }
 
-  return <LangContext value={{ locale, localeOptions, setLocale: changeLocale }}>{children}</LangContext>;
+  return (
+    <LangContext
+      value={{
+        locale,
+        localeOptions: globalConfig.defaultLangOptions,
+        setLocale: changeLocale
+      }}
+    >
+      {children}
+    </LangContext>
+  );
 };
 
 export default LangProvider;

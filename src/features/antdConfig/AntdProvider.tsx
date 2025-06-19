@@ -1,6 +1,6 @@
-import type { WatermarkProps } from 'antd';
 import type { PropsWithChildren } from 'react';
 
+import { globalConfig } from '@/config';
 import { info } from '@/constants/app';
 import { themeColors } from '@/features/theme';
 import { getAntdTheme, setupThemeVarsToHtml } from '@/features/theme/shared';
@@ -10,17 +10,6 @@ import { localStg } from '@/utils/storage';
 
 import { useLang } from '../lang';
 import { useTheme } from '../theme';
-
-const WATERMARK_CONFIG = {
-  font: {
-    fontSize: 16
-  },
-  height: 128,
-  offset: [12, 60],
-  rotate: -15,
-  width: 240,
-  zIndex: 9999
-} satisfies WatermarkProps;
 
 function useAntdTheme() {
   const themeSettings = useThemeSettings();
@@ -55,8 +44,8 @@ function AntdConfig({ children }: PropsWithChildren) {
     >
       <AWatermark
         className="h-full"
-        content={watermarkVisible ? watermarkText || 'Soybean' : ''}
-        {...WATERMARK_CONFIG}
+        content={watermarkVisible ? watermarkText || globalConfig.watermarkText : ''}
+        {...globalConfig.watermarkConfig}
       >
         {children}
       </AWatermark>

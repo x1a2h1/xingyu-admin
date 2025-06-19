@@ -1,6 +1,8 @@
 import { Button } from 'antd';
 import { createElement } from 'react';
 
+import { globalConfig } from '@/config';
+
 import { $t } from '../locales';
 
 export function setupAppVersionNotification() {
@@ -11,7 +13,7 @@ export function setupAppVersionNotification() {
   let isShow = false;
 
   document.addEventListener('visibilitychange', async () => {
-    const preConditions = [!isShow, document.visibilityState === 'visible', !import.meta.env.DEV];
+    const preConditions = [!isShow, document.visibilityState === 'visible', !globalConfig.isDev];
 
     if (!preConditions.every(Boolean)) return;
 
