@@ -425,45 +425,6 @@ const UserProfile: React.FC<UserProfileProps> = ({ user }) => {
 | `OPTIMIZE` | 性能优化点 | `// OPTIMIZE: 考虑使用虚拟滚动` |
 | `REVIEW` | 需要代码审查 | `// REVIEW: 确认业务逻辑是否正确` |
 
-## 文件头注释
-
-### 📄 文件说明注释
-
-```typescript
-// ✅ 正确示例
-/**
- * 用户管理相关工具函数
- * @file utils/user.ts
- * @description 提供用户数据处理、权限验证等工具函数
- * @author 张三 <zhangsan@example.com>
- * @created 2024-01-15
- * @modified 2024-01-20
- * @version 1.2.0
- */
-
-/**
- * 主题配置文件
- * @file config/theme.ts
- * @description 定义应用的主题配置，包括颜色、字体、间距等
- * @author 李四 <lisi@example.com>
- * @created 2024-01-10
- * @dependencies
- * - antd: ^5.0.0 (UI组件)
- * - @ant-design/colors: ^7.0.0 (颜色系统)
- */
-
-/**
- * 用户管理页面组件
- * @file pages/manage/user/index.tsx
- * @description 用户列表页面，包含用户查询、新增、编辑、删除功能
- * @author 王五 <wangwu@example.com>
- * @created 2024-01-12
- * @requires
- * - UserService: 用户相关API服务
- * - useTable: 表格数据管理Hook
- * - UserModal: 用户信息编辑弹窗
- */
-```
 
 ## API 和配置注释
 
@@ -741,5 +702,6 @@ const getUserInfo = () => {
 - 过于显而易见的注释
 - 格式不规范的注释
 - 语言不统一的注释
+- 不需要头部文件注释
 
 遵循这些注释规范将大大提高代码的可读性和可维护性，让团队协作更加高效！
