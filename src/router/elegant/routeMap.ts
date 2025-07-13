@@ -27,6 +27,7 @@ export const routeMap: RouteMap = {
  "document_unocss": "/document/unocss",
  "document_procomponents": "/document/procomponents",
  "document_antd": "/document/antd",
+ "document_ui": "/document/ui",
  "(base)_about": "/about",
  "(base)_function": "/function",
  "(base)_function_event-bus": "/function/event-bus",

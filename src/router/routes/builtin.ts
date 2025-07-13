@@ -89,6 +89,18 @@ export const BaseChildrenRoutes = [
       },
       {
         handle: {
+          i18nKey: 'route.document_ui',
+          localIcon: 'logo',
+          order: 0,
+          title: 'document_ui',
+          url: 'https://ui-playground.ohh-889.com/button'
+        },
+        id: 'document_ui',
+        lazy: () => import('@/pages/_builtin/iframe-page').then(convert),
+        path: '/document/ui'
+      },
+      {
+        handle: {
           i18nKey: 'route.document_project',
           localIcon: 'logo',
           order: 1,

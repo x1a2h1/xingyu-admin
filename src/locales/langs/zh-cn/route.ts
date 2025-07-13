@@ -43,6 +43,7 @@ const route: App.I18n.Schema['translation']['route'] = {
   document_project: '项目文档',
   'document_project-link': '项目文档(外链)',
   document_react: 'React文档',
+  document_ui: 'UI',
   document_unocss: 'UnoCSS文档',
   document_vite: 'Vite文档',
   exception: '异常页',

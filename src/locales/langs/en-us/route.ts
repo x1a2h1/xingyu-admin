@@ -43,6 +43,7 @@ const route: App.I18n.Schema['translation']['route'] = {
   document_project: 'Project Document',
   'document_project-link': 'Project Document(External Link)',
   document_react: 'React Document',
+  document_ui: 'UI',
   document_unocss: 'UnoCSS Document',
   document_vite: 'Vite Document',
   exception: 'Exception',
