@@ -1,3 +1,5 @@
+import { SimpleScrollbar } from '@sa/materials';
+
 import {
   filterAndFlattenRoutes,
   flattenLeafRoutes,
@@ -85,15 +87,15 @@ const MenuAuthModal: FC<ModulesProps> = memo(({ onClose, open, roleId }) => {
         />
       </div>
 
-      <ATree
-        multiple
-        checkStrictly={false}
-        className="h-280px"
-        height={280}
-        selectedKeys={checks}
-        treeData={tree}
-        onSelect={value => setChecks(value as string[])}
-      />
+      <SimpleScrollbar className="!h-270px">
+        <ATree
+          multiple
+          checkStrictly={false}
+          selectedKeys={checks}
+          treeData={tree}
+          onSelect={value => setChecks(value as string[])}
+        />
+      </SimpleScrollbar>
     </AModal>
   );
 });
