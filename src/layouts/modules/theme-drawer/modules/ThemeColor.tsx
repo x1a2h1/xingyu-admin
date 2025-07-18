@@ -45,7 +45,7 @@ const ThemeColor = () => {
             label={t('theme.recommendColor')}
           >
             <Switch
-              defaultChecked={themeSettings.recommendColor}
+              checked={themeSettings.recommendColor}
               onChange={handleRecommendColorChange}
             />
           </SettingItem>

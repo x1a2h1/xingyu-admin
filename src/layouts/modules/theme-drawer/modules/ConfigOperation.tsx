@@ -1,10 +1,15 @@
 import { resetTheme, settingsJson } from '@/features/theme';
+import { useTheme } from '@/features/theme/themeContext';
 
 const ConfigOperation = () => {
   const { t } = useTranslation();
 
   const themeSettingsJson = useAppSelector(settingsJson);
+
   const dispatch = useAppDispatch();
+
+  const { setThemeScheme } = useTheme();
+
   const { copy } = useCopy();
 
   function formatConfigText() {
@@ -25,6 +30,8 @@ const ConfigOperation = () => {
   }
 
   function handleReset() {
+    setThemeScheme('light');
+
     dispatch(resetTheme());
 
     setTimeout(() => {

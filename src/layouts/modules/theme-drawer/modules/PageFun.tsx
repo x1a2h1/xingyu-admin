@@ -37,7 +37,7 @@ const PageFun = memo(() => {
       <SettingItem label={t('theme.scrollMode.title')}>
         <Select
           className="w-120px"
-          defaultValue={themeSetting.layout.scrollMode}
+          value={themeSetting.layout.scrollMode}
           options={themeScrollModeOptions.map(item => ({
             label: t(item.label),
             value: item.value
@@ -47,7 +47,7 @@ const PageFun = memo(() => {
       </SettingItem>
       <SettingItem label={t('theme.page.animate')}>
         <Switch
-          defaultValue={isPageAnimate}
+          checked={isPageAnimate}
           onChange={value => dispatch(setPage({ animate: value }))}
         />
       </SettingItem>
@@ -58,7 +58,7 @@ const PageFun = memo(() => {
       >
         <Select
           className="w-120px"
-          defaultValue={themeSetting.page.animateMode}
+          value={themeSetting.page.animateMode}
           options={themePageAnimationModeOptions.map(item => ({
             label: t(item.label),
             value: item.value
@@ -72,7 +72,7 @@ const PageFun = memo(() => {
         show={isWrapperScrollMode}
       >
         <Switch
-          defaultValue={themeSetting.fixedHeaderAndTab}
+          checked={themeSetting.fixedHeaderAndTab}
           onChange={value => dispatch(setFixedHeaderAndTab(value))}
         />
       </SettingItem>
@@ -80,13 +80,13 @@ const PageFun = memo(() => {
       <SettingItem label={t('theme.header.height')}>
         <InputNumber
           className="w-120px"
-          defaultValue={themeSetting.header.height}
+          value={themeSetting.header.height}
           onChange={value => dispatch(setHeader({ height: value ?? 0 }))}
         />
       </SettingItem>
       <SettingItem label={t('theme.header.breadcrumb.visible')}>
         <Switch
-          defaultValue={themeSetting.header.breadcrumb.visible}
+          value={themeSetting.header.breadcrumb.visible}
           onChange={value => dispatch(setHeader({ breadcrumb: { visible: value } }))}
         />
       </SettingItem>
@@ -96,14 +96,14 @@ const PageFun = memo(() => {
         show={themeSetting.header.breadcrumb.visible}
       >
         <Switch
-          defaultValue={themeSetting.header.breadcrumb.visible}
+          value={themeSetting.header.breadcrumb.visible}
           onChange={value => dispatch(setHeader({ breadcrumb: { showIcon: value } }))}
         />
       </SettingItem>
 
       <SettingItem label={t('theme.tab.visible')}>
         <Switch
-          defaultValue={themeSetting.tab.visible}
+          value={themeSetting.tab.visible}
           onChange={value => dispatch(setTab({ visible: value }))}
         />
       </SettingItem>
@@ -114,7 +114,7 @@ const PageFun = memo(() => {
       >
         <InputNumber
           className="w-120px"
-          defaultValue={themeSetting.tab.height}
+          value={themeSetting.tab.height}
           onChange={value => dispatch(setTab({ height: value ?? 0 }))}
         />
       </SettingItem>
@@ -125,7 +125,7 @@ const PageFun = memo(() => {
       >
         <Select
           className="w-120px"
-          defaultValue={themeSetting.tab.mode}
+          value={themeSetting.tab.mode}
           options={themeTabModeOptions.map(item => ({
             label: t(item.label),
             value: item.value
@@ -140,7 +140,7 @@ const PageFun = memo(() => {
       >
         <InputNumber
           className="w-120px"
-          defaultValue={themeSetting.sider.width}
+          value={themeSetting.sider.width}
           onChange={value => dispatch(setSider({ width: value ?? 0 }))}
         />
       </SettingItem>
@@ -151,7 +151,7 @@ const PageFun = memo(() => {
       >
         <InputNumber
           className="w-120px"
-          defaultValue={themeSetting.sider.collapsedWidth}
+          value={themeSetting.sider.collapsedWidth}
           onChange={value => dispatch(setSider({ collapsedWidth: value ?? 0 }))}
         />
       </SettingItem>
@@ -162,7 +162,7 @@ const PageFun = memo(() => {
       >
         <InputNumber
           className="w-120px"
-          defaultValue={themeSetting.sider.mixWidth}
+          value={themeSetting.sider.mixWidth}
           onChange={value => dispatch(setSider({ mixWidth: value ?? 0 }))}
         />
       </SettingItem>
@@ -173,7 +173,7 @@ const PageFun = memo(() => {
       >
         <InputNumber
           className="w-120px"
-          defaultValue={themeSetting.sider.mixCollapsedWidth}
+          value={themeSetting.sider.mixCollapsedWidth}
           onChange={value => dispatch(setSider({ mixCollapsedWidth: value ?? 0 }))}
         />
       </SettingItem>
@@ -184,14 +184,14 @@ const PageFun = memo(() => {
       >
         <InputNumber
           className="w-120px"
-          defaultValue={themeSetting.sider.mixChildMenuWidth}
+          value={themeSetting.sider.mixChildMenuWidth}
           onChange={value => dispatch(setSider({ mixChildMenuWidth: value ?? 0 }))}
         />
       </SettingItem>
 
       <SettingItem label={t('theme.footer.visible')}>
         <Switch
-          defaultValue={themeSetting.footer.visible}
+          value={themeSetting.footer.visible}
           onChange={value => dispatch(setFooter({ visible: value }))}
         />
       </SettingItem>
@@ -201,7 +201,7 @@ const PageFun = memo(() => {
         show={Boolean(themeSetting.footer.visible && isWrapperScrollMode)}
       >
         <Switch
-          defaultValue={themeSetting.footer.fixed}
+          value={themeSetting.footer.fixed}
           onChange={value => dispatch(setFooter({ fixed: value }))}
         />
       </SettingItem>
@@ -212,7 +212,7 @@ const PageFun = memo(() => {
       >
         <InputNumber
           className="w-120px"
-          defaultValue={themeSetting.footer.height}
+          value={themeSetting.footer.height}
           onChange={value => dispatch(setFooter({ height: value ?? 0 }))}
         />
       </SettingItem>
@@ -222,14 +222,14 @@ const PageFun = memo(() => {
         show={Boolean(themeSetting.footer.visible && layoutMode === 'horizontal-mix')}
       >
         <Switch
-          defaultValue={themeSetting.footer.right}
+          value={themeSetting.footer.right}
           onChange={value => dispatch(setFooter({ right: value }))}
         />
       </SettingItem>
 
       <SettingItem label={t('theme.watermark.visible')}>
         <Switch
-          defaultValue={themeSetting.watermark?.visible}
+          value={themeSetting.watermark?.visible}
           onChange={value => dispatch(setWatermark({ visible: value }))}
         />
       </SettingItem>
@@ -241,7 +241,7 @@ const PageFun = memo(() => {
         <AInput
           allowClear
           className="w-120px"
-          defaultValue={themeSetting.watermark.text}
+          value={themeSetting.watermark.text}
           onChange={value => dispatch(setWatermark({ text: value.target.value || '' }))}
         />
       </SettingItem>

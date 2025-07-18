@@ -3,7 +3,12 @@ import type { PropsWithChildren } from 'react';
 import { globalConfig } from '@/config';
 import { info } from '@/constants/app';
 import { themeColors } from '@/features/theme';
-import { getAntdTheme, setupThemeVarsToHtml } from '@/features/theme/shared';
+import {
+  getAntdTheme,
+  setupThemeVarsToHtml,
+  toggleAuxiliaryColorModes,
+  toggleGrayscaleMode
+} from '@/features/theme/shared';
 import { useThemeSettings } from '@/features/theme/themeHook';
 import { antdLocales } from '@/locales/antd';
 import { localStg } from '@/utils/storage';
@@ -22,7 +27,12 @@ function useAntdTheme() {
 
   useEffect(() => {
     setupThemeVarsToHtml(colors, themeSettings.tokens, themeSettings.recommendColor);
+
     localStg.set('themeColor', colors.primary);
+
+    toggleAuxiliaryColorModes(themeSettings.colourWeakness);
+
+    toggleGrayscaleMode(themeSettings.grayscale);
   }, [colors, themeSettings]);
 
   console.info(`%c${info}`, `color: ${colors.primary}`);

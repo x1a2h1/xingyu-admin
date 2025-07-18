@@ -32,6 +32,8 @@ declare namespace UnionKey {
   /** Page animate mode */
   type ThemePageAnimateMode = 'fade' | 'fade-bottom' | 'fade-scale' | 'fade-slide' | 'none' | 'zoom-fade' | 'zoom-out';
 
+  /** Theme scheme */
+  type ThemeScheme = 'auto' | 'dark' | 'light';
   /**
    * Tab mode
    *

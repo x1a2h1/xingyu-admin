@@ -86,7 +86,7 @@ const CustomPicker: FC<Props> = memo(({ isInfoFollowPrimary, label, theme, value
       suffix={
         label === 'info' && (
           <ACheckbox
-            defaultChecked={isInfoFollowPrimary}
+            checked={isInfoFollowPrimary}
             onChange={onChange}
           >
             {t('theme.themeColor.followPrimary')}

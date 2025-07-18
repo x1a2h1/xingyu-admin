@@ -1,6 +1,7 @@
 import { ThemeMode, type ThemeModeType } from 'ahooks/lib/useTheme';
 import type { FC, PropsWithChildren } from 'react';
 
+import { themeSettings } from '@/theme/settings';
 import { localStg } from '@/utils/storage';
 
 import { ThemeContext, toggleCssDarkMode } from './themeContext';
@@ -8,7 +9,9 @@ import { ThemeContext, toggleCssDarkMode } from './themeContext';
 const DARK_MODE_MEDIA_QUERY = '(prefers-color-scheme: dark)';
 
 const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [themeMode, setThemeMode] = useState<ThemeModeType>((localStg.get('themeMode') as ThemeModeType) || 'light');
+  const [themeMode, setThemeMode] = useState<ThemeModeType>(
+    (localStg.get('themeMode') as ThemeModeType) || themeSettings.themeScheme
+  );
 
   const darkMode = themeMode === 'dark';
 
@@ -28,6 +31,7 @@ const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
 
   useEffect(() => {
     toggleCssDarkMode(darkMode);
+
     localStg.set('darkMode', darkMode);
   }, [darkMode]);
 

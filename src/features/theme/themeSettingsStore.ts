@@ -6,7 +6,7 @@ import { globalConfig } from '@/config';
 import type { AppThunk } from '@/store';
 import { localStg } from '@/utils/storage';
 
-import { initThemeSettings, toggleAuxiliaryColorModes, toggleGrayscaleMode } from './shared';
+import { initThemeSettings } from './shared';
 
 interface InitialStateType {
   settings: App.Theme.ThemeSetting;
@@ -32,7 +32,7 @@ export const themeSlice = createSlice({
       state.settings.layout.reverseHorizontalMix = payload;
     },
 
-    resetTheme() {
+    resetTheme: () => {
       return initialState;
     },
     /**
@@ -41,7 +41,6 @@ export const themeSlice = createSlice({
      * @param isColourWeakness
      */
     setColourWeakness(state, { payload }: PayloadAction<boolean>) {
-      toggleAuxiliaryColorModes(payload);
       state.settings.colourWeakness = payload;
     },
 
@@ -57,7 +56,6 @@ export const themeSlice = createSlice({
      * @param isGrayscale
      */
     setGrayscale(state, { payload }: PayloadAction<boolean>) {
-      toggleGrayscaleMode(payload);
       state.settings.grayscale = payload;
     },
     setHeader(state, { payload }: PayloadAction<DeepPartial<App.Theme.ThemeSetting['header']>>) {

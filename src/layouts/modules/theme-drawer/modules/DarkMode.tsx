@@ -36,21 +36,21 @@ const DarkMode = () => {
 
       <SettingItem label={t('theme.grayscale')}>
         <Switch
-          defaultChecked={themeSettings.grayscale}
+          checked={themeSettings.grayscale}
           onChange={handleGrayscaleChange}
         />
       </SettingItem>
 
       <SettingItem label={t('theme.colourWeakness')}>
         <Switch
-          defaultChecked={themeSettings.colourWeakness}
+          checked={themeSettings.colourWeakness}
           onChange={handleAuxiliaryColorChange}
         />
       </SettingItem>
 
       <SettingItem label={t('theme.isOnlyExpandCurrentParentMenu')}>
         <Switch
-          defaultChecked={themeSettings.isOnlyExpandCurrentParentMenu}
+          checked={themeSettings.isOnlyExpandCurrentParentMenu}
           onChange={handleIsOnlyExpandCurrentParentMenuChange}
         />
       </SettingItem>

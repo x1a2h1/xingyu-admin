@@ -95,6 +95,8 @@ declare namespace App {
       };
       /** Theme color */
       themeColor: string;
+      /** Theme scheme */
+      themeScheme: UnionKey.ThemeScheme;
       /** define some theme settings tokens, will transform to css variables */
       tokens: {
         dark?: {

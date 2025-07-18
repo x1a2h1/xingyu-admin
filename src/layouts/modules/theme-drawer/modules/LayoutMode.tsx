@@ -70,7 +70,7 @@ const LayoutMode = memo(() => {
         show={themeSettings.layout.mode === 'horizontal-mix'}
       >
         <ASwitch
-          defaultChecked={themeSettings.layout.reverseHorizontalMix}
+          checked={themeSettings.layout.reverseHorizontalMix}
           onChange={toggleReverseHorizontalMix}
         />
       </SettingItem>
