@@ -22,10 +22,10 @@ export function useAuth() {
     }
 
     if (typeof codes === 'string') {
-      return userInfo.buttons.includes(codes);
+      return userInfo.menu_list?.some(menu => menu.symbol === codes);
     }
 
-    return codes.some(code => userInfo.buttons.includes(code));
+    return codes.some(code => userInfo.menu_list?.some(menu => menu.symbol === code));
   }
 
   return {
@@ -74,7 +74,7 @@ export function useInitAuth() {
         }
 
         window.$notification?.success({
-          description: t('page.login.common.welcomeBack', { userName: info.userName }),
+          description: t('page.login.common.welcomeBack', { userName: info.nickname }),
           message: t('page.login.common.loginSuccess')
         });
       }

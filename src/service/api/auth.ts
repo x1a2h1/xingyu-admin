@@ -6,20 +6,20 @@ import { request } from '../request';
  * @param userName User name
  * @param password Password
  */
-export function fetchLogin(userName: string, password: string) {
+export function fetchLogin(account: string, password: string) {
   return request<Api.Auth.LoginToken>({
     data: {
-      password,
-      userName
+      account,
+      password
     },
     method: 'post',
-    url: '/auth/login'
+    url: '/comm/login'
   });
 }
 
 /** Get user info */
 export function fetchGetUserInfo() {
-  return request<Api.Auth.UserInfo>({ url: '/auth/getUserInfo' });
+  return request<Api.User.Info>({ url: '/user/me' });
 }
 
 /**

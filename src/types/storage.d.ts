@@ -40,6 +40,6 @@ declare namespace StorageType {
     /** The token */
     token: string;
     /** The user info */
-    userInfo: Api.Auth.UserInfo;
+    userInfo: Api.User.Info;
   }
 }

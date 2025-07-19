@@ -226,4 +226,65 @@ declare namespace Api {
       pId: number;
     };
   }
+  /** 上述为模版，下面为业务需要新增的类型 */
+  type base = {
+    create_time: string;
+    id: number;
+    update_time: string;
+  };
+  type PageableData<T = any> = {
+    list: T[];
+    total: number;
+  };
+  namespace User {
+    type Info = base & {
+      account: string;
+      cellphone: string;
+      email: string;
+      menu_list: Menu.Info[] | null;
+      nickname: string;
+      remark: string;
+      role_list: Role.Info[] | null;
+      root: boolean;
+      status: number;
+    };
+    type List = PageableData<Info>;
+  }
+  namespace Menu {
+    type Info = base & {
+      display: number;
+      external: number;
+      external_way: number;
+      icon: string;
+      name: string;
+      page: string;
+      parent_id: number;
+      path: string;
+      sort_num: number;
+      symbol: string;
+      url: string;
+    };
+    type Tree = {
+      children?: Tree[];
+      display: number;
+      external: number;
+      external_way: number;
+      icon: string;
+      id: string;
+      name: string;
+      parent_id: number;
+      sort_num: number;
+      symbol: string;
+      url: string;
+    };
+    type List = PageableData<Info>;
+  }
+  namespace Role {
+    type Info = base & {
+      menu_list: Menu.Info[] | null;
+      name: string;
+      sort_num: number;
+    };
+    type List = PageableData<Info>;
+  }
 }
