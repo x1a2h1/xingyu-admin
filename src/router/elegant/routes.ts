@@ -338,6 +338,20 @@ export const generatedRoutes: ElegantConstRoute[] = [
             ]
           },
           {
+            matchedFiles: [null, '/src/pages/(base)/system-manage/index.tsx', null, null],
+            name: '(base)_system-manage',
+            path: '/system-manage',
+            handle: { i18nKey: 'route.(base)_system-manage', title: '(base)_system-manage' },
+            children: [
+              {
+                matchedFiles: [null, '/src/pages/(base)/system-manage/menu/index.tsx', null, null],
+                name: '(base)_system-manage_menu',
+                path: '/system-manage/menu',
+                handle: { i18nKey: 'route.(base)_system-manage_menu', title: '(base)_system-manage_menu' }
+              }
+            ]
+          },
+          {
             matchedFiles: [null, '/src/pages/(base)/user-center/index.tsx', null, null],
             name: '(base)_user-center',
             path: '/user-center',
