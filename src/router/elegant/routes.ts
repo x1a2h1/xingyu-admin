@@ -34,6 +34,12 @@ export const generatedRoutes: ElegantConstRoute[] = [
             }
           },
           {
+            matchedFiles: [null, '/src/pages/(base)/entity-manage/index.tsx', null, null],
+            name: '(base)_entity-manage',
+            path: '/entity-manage',
+            handle: { i18nKey: 'route.(base)_entity-manage', title: '(base)_entity-manage' }
+          },
+          {
             matchedFiles: [null, '/src/pages/(base)/function/index.tsx', null, null],
             name: '(base)_function',
             path: '/function',

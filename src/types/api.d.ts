@@ -287,4 +287,76 @@ declare namespace Api {
     };
     type List = PageableData<Info>;
   }
+  namespace Application {
+    type Info = base & {
+      adnetqq_app_id: number;
+      app_name: string;
+      csj_app_id: number;
+      entity: Entity.Entity;
+      entity_id: number;
+      gromore_app_id: number;
+      kwai_app_id: number;
+      package_name: string;
+      privacy_agreement_short_code: string;
+      remarks: string;
+      status: Common.EnableStatus;
+      taku_app_id: number;
+      user_agreement_short_code: string;
+      user_id: number;
+    };
+    type List = PageableData<Info>;
+  }
+  namespace Entity {
+    type Entity = base & {
+      adnetqq: AdnetQQConfig;
+      alipay: AlipayConfig;
+      csj: CsjConfig;
+      domain: string;
+      kwai: KwaiConfig;
+      name: string;
+      taku: TakuConfig;
+      user: Auth.UserInfo;
+      user_id: number;
+    };
+    type AlipayConfig = {
+      app_id: string;
+      app_public_cert: string;
+      entity_id: number;
+      private_key: string;
+      public_cert: string;
+      root_cert: string;
+    };
+    type AdnetQQConfig = {
+      member_id: string;
+      secret: string;
+    };
+    type CsjConfig = {
+      role_id: string;
+      security_key: string;
+      user_id: string;
+    };
+    type KwaiConfig = {
+      access_key: string;
+      security_key: string;
+    };
+    type TakuConfig = {
+      publisher_id: string;
+    };
+    type List = PageableData<Entity>;
+  }
+  namespace Ads {
+    type Slot = base & {
+      ad_slot_id: number;
+      app_name: string;
+      bid_type: number;
+      callback_url: string;
+      ecpm: string;
+      entity_name: string;
+      key: string;
+      name: string;
+      platform: string;
+      type: string;
+    };
+    type List = PageableData<Slot>;
+  }
 }
