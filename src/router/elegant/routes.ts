@@ -366,6 +366,20 @@ export const generatedRoutes: ElegantConstRoute[] = [
                 name: '(base)_system-manage_users',
                 path: '/system-manage/users',
                 handle: { i18nKey: 'route.(base)_system-manage_users', title: '(base)_system-manage_users' }
+              },
+              {
+                matchedFiles: [
+                  null,
+                  '/src/pages/(base)/system-manage/withdrawal-threshold-settings/index.tsx',
+                  null,
+                  null
+                ],
+                name: '(base)_system-manage_withdrawal-threshold-settings',
+                path: '/system-manage/withdrawal-threshold-settings',
+                handle: {
+                  i18nKey: 'route.(base)_system-manage_withdrawal-threshold-settings',
+                  title: '(base)_system-manage_withdrawal-threshold-settings'
+                }
               }
             ]
           },
