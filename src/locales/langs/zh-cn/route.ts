@@ -1,5 +1,6 @@
 const route: App.I18n.Schema['translation']['route'] = {
   '(base)_about': '关于',
+  '(base)_app-manage': '应用管理',
   '(base)_entity-manage': '实体管理',
   '(base)_function': '系统功能',
   '(base)_function_event-bus': '事件总线演示',
