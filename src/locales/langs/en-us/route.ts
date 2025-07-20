@@ -31,6 +31,7 @@ const route: App.I18n.Schema['translation']['route'] = {
   '(base)_system-manage': 'System Manage',
   '(base)_system-manage_menu': 'Menu Manage',
   '(base)_system-manage_roles': 'Role Manage',
+  '(base)_system-manage_users': 'User Manage',
   '(base)_user-center': 'User Center',
   '(blank)_login': 'Login',
   '(blank)_login_code-login': 'Code Login',
