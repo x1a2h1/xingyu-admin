@@ -6,6 +6,7 @@
 // biome-ignore lint: disable
 export {}
 declare global {
+  const AAlert: typeof import('antd')['Alert']
   const ABreadcrumb: typeof import('antd')['Breadcrumb']
   const AButton: typeof import('antd')['Button']
   const ACard: typeof import('antd')['Card']
@@ -36,6 +37,7 @@ declare global {
   const AStatistic: typeof import('antd')['Statistic']
   const ASwitch: typeof import('antd')['Switch']
   const ATable: typeof import('antd')['Table']
+  const ATabs: typeof import('antd')['Tabs']
   const ATag: typeof import('antd')['Tag']
   const ATooltip: typeof import('antd')['Tooltip']
   const ATree: typeof import('antd')['Tree']

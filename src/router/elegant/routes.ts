@@ -356,6 +356,12 @@ export const generatedRoutes: ElegantConstRoute[] = [
                 handle: { i18nKey: 'route.(base)_system-manage_roles', title: '(base)_system-manage_roles' }
               },
               {
+                matchedFiles: [null, '/src/pages/(base)/system-manage/templates/index.tsx', null, null],
+                name: '(base)_system-manage_templates',
+                path: '/system-manage/templates',
+                handle: { i18nKey: 'route.(base)_system-manage_templates', title: '(base)_system-manage_templates' }
+              },
+              {
                 matchedFiles: [null, '/src/pages/(base)/system-manage/users/index.tsx', null, null],
                 name: '(base)_system-manage_users',
                 path: '/system-manage/users',
