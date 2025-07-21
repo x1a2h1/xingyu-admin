@@ -2,7 +2,6 @@ export async function onRequest({ env, request }) {
   const url = new URL(request.url);
   const proxyRequest = new Request(`${env.base_url}${url.pathname}${url.search}`, {
     body: request.body,
-    copyHeaders: true,
     headers: request.headers,
     method: request.method
   });
