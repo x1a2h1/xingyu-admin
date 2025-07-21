@@ -23,6 +23,7 @@ declare global {
   const AFlex: typeof import('antd')['Flex']
   const AForm: typeof import('antd')['Form']
   const AInput: typeof import('antd')['Input']
+  const AInputNumber: typeof import('antd')['InputNumber']
   const AList: typeof import('antd')['List']
   const AMenu: typeof import('antd')['Menu']
   const AModal: typeof import('antd')['Modal']

@@ -37,6 +37,7 @@ const route: App.I18n.Schema['translation']['route'] = {
   '(base)_system-manage_users': '用户管理',
   '(base)_system-manage_withdrawal-threshold-settings': '提现阈值设置',
   '(base)_user-center': '个人中心',
+  '(base)_withdraw-approval': '提现审批',
   '(blank)_login': '登录',
   '(blank)_login_code-login': '验证码登录',
   '(blank)_login_register': ' 注册账号',

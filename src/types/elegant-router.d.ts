@@ -67,6 +67,7 @@ declare module "@soybean-react/vite-plugin-react-router" {
     "(base)_system-manage_users": "/system-manage/users";
     "(base)_system-manage_withdrawal-threshold-settings": "/system-manage/withdrawal-threshold-settings";
     "(base)_user-center": "/user-center";
+    "(base)_withdraw-approval": "/withdraw-approval";
     "(blank)_login": "/login";
     "(blank)_login_code-login": "/login/code-login";
     "(blank)_login_register": "/login/register";
@@ -183,6 +184,7 @@ declare module "@soybean-react/vite-plugin-react-router" {
     | "(base)_system-manage_users"
     | "(base)_system-manage_withdrawal-threshold-settings"
     | "(base)_user-center"
+    | "(base)_withdraw-approval"
     | "(blank)"
     | "(blank)_login-out"
     | "(blank)_login_code-login"

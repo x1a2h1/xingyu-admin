@@ -359,4 +359,67 @@ declare namespace Api {
     };
     type List = PageableData<Slot>;
   }
+  // 提现相关类型
+  namespace Withdraw {
+    type Info = base & {
+      amount: number;
+      app?: Application.Info;
+      app_chan?: AppChan.Info;
+      entity?: Entity.Entity;
+      id: number;
+      identity: string;
+      operator_name?: string;
+      operator_remarks?: string;
+      out_biz_no: string;
+      pay_fund_order_id?: string;
+      payment_order_id?: string;
+      platform: string;
+      processed_at?: number;
+      real_name: string;
+      remarks?: string;
+      status: 'approved' | 'failed' | 'paid' | 'pending' | 'rejected';
+      uid: string;
+    };
+    type List = PageableData<Info>;
+    type SearchParams = {
+      app_chan_id?: number;
+      app_id?: number;
+      approver_name?: string;
+      entity_id?: number;
+      keyword?: string;
+      page?: number;
+      page_size?: number;
+      platform?: string;
+      status?: string;
+    };
+    type ApprovalParams = {
+      remarks?: string;
+      status: 'approved' | 'rejected';
+    };
+  }
+  // 渠道相关类型
+  namespace Channel {
+    type Info = base & {
+      creator: Auth.UserInfo;
+      creator_id: number;
+      name: string;
+      remarks: string;
+      status: Common.EnableStatus;
+    };
+    type List = PageableData<Info>;
+  }
+  // 应用渠道关联相关类型
+  namespace AppChan {
+    type Info = base & {
+      app: Application.Info;
+      app_id: number;
+      channel: Channel.Info;
+      channel_id: number;
+      creator: Auth.UserInfo;
+      creator_id: number;
+      name: string;
+      remarks: string;
+    };
+    type List = PageableData<Info>;
+  }
 }

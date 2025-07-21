@@ -400,6 +400,12 @@ export const generatedRoutes: ElegantConstRoute[] = [
             name: '(base)_user-center',
             path: '/user-center',
             handle: { hideInMenu: true, i18nKey: 'route.(base)_user-center', title: 'user-center' }
+          },
+          {
+            matchedFiles: [null, '/src/pages/(base)/withdraw-approval/index.tsx', null, null],
+            name: '(base)_withdraw-approval',
+            path: '/withdraw-approval',
+            handle: { i18nKey: 'route.(base)_withdraw-approval', title: '(base)_withdraw-approval' }
           }
         ],
         path: null

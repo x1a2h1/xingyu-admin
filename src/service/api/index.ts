@@ -7,3 +7,4 @@ export * from './route';
 export * from './setting';
 export * from './system-manage';
 export * from './user';
+export * from './withdraw';

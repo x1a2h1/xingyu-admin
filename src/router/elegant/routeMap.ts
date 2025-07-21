@@ -66,6 +66,7 @@ export const routeMap: RouteMap = {
  "(base)_system-manage_users": "/system-manage/users",
  "(base)_system-manage_withdrawal-threshold-settings": "/system-manage/withdrawal-threshold-settings",
  "(base)_user-center": "/user-center",
+ "(base)_withdraw-approval": "/withdraw-approval",
  "(blank)_login": "/login",
  "(blank)_login_code-login": "/login/code-login",
  "(blank)_login_register": "/login/register",

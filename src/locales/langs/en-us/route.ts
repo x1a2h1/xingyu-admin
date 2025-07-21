@@ -37,6 +37,7 @@ const route: App.I18n.Schema['translation']['route'] = {
   '(base)_system-manage_users': 'User Manage',
   '(base)_system-manage_withdrawal-threshold-settings': 'Withdrawal Threshold Settings',
   '(base)_user-center': 'User Center',
+  '(base)_withdraw-approval': 'Withdraw Approval',
   '(blank)_login': 'Login',
   '(blank)_login_code-login': 'Code Login',
   '(blank)_login_register': 'Register Account',
