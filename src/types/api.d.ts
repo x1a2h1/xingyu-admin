@@ -399,10 +399,17 @@ declare namespace Api {
   }
   // 渠道相关类型
   namespace Channel {
+    type Options = {
+      greeter_login?: boolean;
+      qq_login?: boolean;
+      wechat_login?: boolean;
+    };
+
     type Info = base & {
       creator: Auth.UserInfo;
       creator_id: number;
       name: string;
+      options?: Options | null;
       remarks: string;
       status: Common.EnableStatus;
     };
