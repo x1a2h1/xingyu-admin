@@ -4,9 +4,15 @@ import dayjs from 'dayjs';
 interface SlotProps {
   readonly dataSource: Api.Ads.Slot[];
   readonly loading?: boolean;
+  readonly onPaginationChange?: (page: number, pageSize: number) => void;
+  readonly pagination?: {
+    current: number;
+    pageSize: number;
+    total: number;
+  };
 }
 
-const TableCard = ({ dataSource, loading }: SlotProps) => {
+const TableCard = ({ dataSource, loading, onPaginationChange, pagination }: SlotProps) => {
   const columns = [
     {
       render: (_: unknown, __: unknown, index: number) => index + 1,
@@ -169,12 +175,20 @@ const TableCard = ({ dataSource, loading }: SlotProps) => {
             />
           )
         }}
-        pagination={{
-          hideOnSinglePage: true,
-          showQuickJumper: true,
-          showSizeChanger: true,
-          showTotal: (total, range) => `第 ${range[0]}-${range[1]} 条/共 ${total} 条`
-        }}
+        pagination={
+          pagination
+            ? {
+                current: pagination.current,
+                onChange: onPaginationChange,
+                onShowSizeChange: onPaginationChange,
+                pageSize: pagination.pageSize,
+                showQuickJumper: true,
+                showSizeChanger: true,
+                showTotal: (total, range) => `第 ${range[0]}-${range[1]} 条/共 ${total} 条`,
+                total: pagination.total
+              }
+            : false
+        }
       />
     </ACard>
   );

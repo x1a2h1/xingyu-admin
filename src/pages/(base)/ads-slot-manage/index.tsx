@@ -9,6 +9,11 @@ export default function AdsSlotManage() {
   const navigate = useNavigate();
   const [searchForm] = AForm.useForm();
   const [tableData, setTableData] = useState<Api.Ads.Slot[]>([]);
+  const [pagination, setPagination] = useState({
+    current: 1,
+    pageSize: 10,
+    total: 0
+  });
 
   // 获取应用列表
   const { data: appListData, loading: appLoading } = useRequest(fetchGetAppList, {
@@ -28,21 +33,28 @@ export default function AdsSlotManage() {
     onSuccess: res => {
       // 安全处理代码位数据
       let slotData: Api.Ads.Slot[] = [];
+      let total = 0;
       try {
         // 检查数据结构并安全获取列表
         if (res?.data?.list) {
           slotData = Array.isArray(res.data.list) ? res.data.list : [];
+          total = res.data.total || slotData.length;
         }
       } catch {
         slotData = [];
+        total = 0;
       }
       setTableData(slotData);
+      setPagination(prev => ({ ...prev, total }));
     }
   });
 
   // 组件初始化时加载数据
   useEffect(() => {
-    getSlotList();
+    getSlotList({
+      page: pagination.current,
+      pageSize: pagination.pageSize
+    });
   }, [getSlotList]);
 
   const handleSearch = () => {
@@ -76,17 +88,20 @@ export default function AdsSlotManage() {
 
     // 添加分页参数
     params.page = 1;
-    params.pageSize = 100;
+    params.pageSize = pagination.pageSize;
 
+    // 重置分页到第一页
+    setPagination(prev => ({ ...prev, current: 1 }));
     getSlotList(params);
   };
 
   const handleReset = () => {
     searchForm.resetFields();
     // 重置后显示全量数据
+    setPagination(prev => ({ ...prev, current: 1 }));
     getSlotList({
       page: 1,
-      pageSize: 100
+      pageSize: pagination.pageSize
     });
   };
 
@@ -96,6 +111,44 @@ export default function AdsSlotManage() {
 
   const handleBatchAdd = () => {
     navigate('/ads-slot-manage/batch');
+  };
+
+  // 处理分页变化
+  const handlePaginationChange = (page: number, pageSize: number) => {
+    setPagination(prev => ({
+      ...prev,
+      current: page,
+      pageSize
+    }));
+
+    // 获取当前搜索条件
+    const values = searchForm.getFieldsValue();
+    const params: Parameters<typeof fetchAdsSlotList>[0] = {
+      page,
+      pageSize
+    };
+
+    // 添加搜索条件到分页请求中
+    if (values.app_id) {
+      params.id = values.app_id;
+    }
+    if (values.platform) {
+      params.platform = values.platform;
+    }
+    if (values.type) {
+      const typeMap: Record<string, 1 | 2 | 3 | 4> = {
+        flow: 1,
+        interstitial: 4,
+        reward: 3,
+        splash: 2
+      };
+      params.type = typeMap[values.type];
+    }
+    if (values.bidding_type !== undefined && values.bidding_type !== null) {
+      params.bid_type = values.bidding_type;
+    }
+
+    getSlotList(params);
   };
 
   return (
@@ -204,6 +257,8 @@ export default function AdsSlotManage() {
       <TableCard
         dataSource={tableData}
         loading={loading}
+        pagination={pagination}
+        onPaginationChange={handlePaginationChange}
       />
     </div>
   );
