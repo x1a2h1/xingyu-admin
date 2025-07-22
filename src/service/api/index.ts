@@ -2,6 +2,7 @@ export * from './appchan';
 export * from './application';
 export * from './auth';
 export * from './channel';
+export * from './ecpm';
 export * from './entity';
 export * from './menu';
 export * from './role';

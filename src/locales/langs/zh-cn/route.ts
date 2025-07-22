@@ -3,6 +3,7 @@ const route: App.I18n.Schema['translation']['route'] = {
   '(base)_app-manage': '应用管理',
   '(base)_build-manage': '打包配置',
   '(base)_channel-manage': '渠道管理',
+  '(base)_ecpm-manage': 'eCPM管理',
   '(base)_entity-manage': '实体管理',
   '(base)_function': '系统功能',
   '(base)_function_event-bus': '事件总线演示',

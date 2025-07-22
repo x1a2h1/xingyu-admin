@@ -33,6 +33,7 @@ declare module "@soybean-react/vite-plugin-react-router" {
     "(base)_app-manage": "/app-manage";
     "(base)_build-manage": "/build-manage";
     "(base)_channel-manage": "/channel-manage";
+    "(base)_ecpm-manage": "/ecpm-manage";
     "(base)_entity-manage": "/entity-manage";
     "(base)_function": "/function";
     "(base)_function_event-bus": "/function/event-bus";
@@ -151,6 +152,7 @@ declare module "@soybean-react/vite-plugin-react-router" {
     | "(base)_app-manage"
     | "(base)_build-manage"
     | "(base)_channel-manage"
+    | "(base)_ecpm-manage"
     | "(base)_entity-manage"
     | "(base)_function_event-bus"
     | "(base)_function_hide-child"

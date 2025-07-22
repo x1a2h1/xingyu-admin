@@ -429,4 +429,15 @@ declare namespace Api {
     };
     type List = PageableData<Info>;
   }
+  namespace ECPM {
+    type Info = base & {
+      ecpm_entries: ECPMEntry[] | null;
+    };
+    type ECPMEntry = {
+      ad_type: number;
+      bid_type: number;
+      ecpm: number;
+    };
+    type List = PageableData<Info>;
+  }
 }

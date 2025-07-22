@@ -21,6 +21,7 @@ export const pages: Record<string, () => Promise<any>> = {
 "(base)_app-manage": () => import("@/pages/(base)/app-manage/index.tsx"),
 "(base)_build-manage": () => import("@/pages/(base)/build-manage/index.tsx"),
 "(base)_channel-manage": () => import("@/pages/(base)/channel-manage/index.tsx"),
+"(base)_ecpm-manage": () => import("@/pages/(base)/ecpm-manage/index.tsx"),
 "(base)_entity-manage": () => import("@/pages/(base)/entity-manage/index.tsx"),
 "(base)_function_event-bus": () => import("@/pages/(base)/function/event-bus/index.tsx"),
 "(base)_function_hide-child": () => import("@/pages/(base)/function/hide-child/index.tsx"),

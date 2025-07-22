@@ -52,6 +52,12 @@ export const generatedRoutes: ElegantConstRoute[] = [
             handle: { i18nKey: 'route.(base)_channel-manage', title: '(base)_channel-manage' }
           },
           {
+            matchedFiles: [null, '/src/pages/(base)/ecpm-manage/index.tsx', null, null],
+            name: '(base)_ecpm-manage',
+            path: '/ecpm-manage',
+            handle: { i18nKey: 'route.(base)_ecpm-manage', title: '(base)_ecpm-manage' }
+          },
+          {
             matchedFiles: [null, '/src/pages/(base)/entity-manage/index.tsx', null, null],
             name: '(base)_entity-manage',
             path: '/entity-manage',

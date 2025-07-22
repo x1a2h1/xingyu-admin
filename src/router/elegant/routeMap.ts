@@ -32,6 +32,7 @@ export const routeMap: RouteMap = {
  "(base)_app-manage": "/app-manage",
  "(base)_build-manage": "/build-manage",
  "(base)_channel-manage": "/channel-manage",
+ "(base)_ecpm-manage": "/ecpm-manage",
  "(base)_entity-manage": "/entity-manage",
  "(base)_function": "/function",
  "(base)_function_event-bus": "/function/event-bus",
