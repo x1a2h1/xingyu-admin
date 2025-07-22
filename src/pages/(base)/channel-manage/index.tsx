@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import {
   fetchDeleteChannel,
-  fetchGetchGetChannelList,
+  fetchGetChannelList,
   fetchPostChannel,
   fetchPutChannel,
   fetchPutChannelConfig
@@ -18,7 +18,7 @@ const ChannelManage = () => {
     data: resp,
     loading,
     run: getList
-  } = useRequest(fetchGetchGetChannelList, {
+  } = useRequest(fetchGetChannelList, {
     manual: true
   });
   const [total, setTotal] = useState(0);

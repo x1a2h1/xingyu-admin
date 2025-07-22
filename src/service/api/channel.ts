@@ -1,7 +1,7 @@
 import { request } from '../request';
 
 /* 获取渠道列表 */
-export function fetchGetchGetChannelList(params?: { keyword?: string; page?: number; pageSize?: number }) {
+export function fetchGetChannelList(params?: { keyword?: string; page?: number; pageSize?: number }) {
   return request<Api.Channel.List>({
     method: 'get',
     params,
