@@ -422,7 +422,7 @@ declare namespace Api {
       app_id: number;
       channel: Channel.Info;
       channel_id: number;
-      creator: Auth.UserInfo;
+      creator: User.Info;
       creator_id: number;
       name: string;
       remarks: string;

@@ -31,6 +31,7 @@ declare module "@soybean-react/vite-plugin-react-router" {
     "document_ui": "/document/ui";
     "(base)_about": "/about";
     "(base)_app-manage": "/app-manage";
+    "(base)_build-manage": "/build-manage";
     "(base)_channel-manage": "/channel-manage";
     "(base)_entity-manage": "/entity-manage";
     "(base)_function": "/function";
@@ -148,6 +149,7 @@ declare module "@soybean-react/vite-plugin-react-router" {
     RouteKey,
     | "(base)_about"
     | "(base)_app-manage"
+    | "(base)_build-manage"
     | "(base)_channel-manage"
     | "(base)_entity-manage"
     | "(base)_function_event-bus"

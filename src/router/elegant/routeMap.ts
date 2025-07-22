@@ -30,6 +30,7 @@ export const routeMap: RouteMap = {
  "document_ui": "/document/ui",
  "(base)_about": "/about",
  "(base)_app-manage": "/app-manage",
+ "(base)_build-manage": "/build-manage",
  "(base)_channel-manage": "/channel-manage",
  "(base)_entity-manage": "/entity-manage",
  "(base)_function": "/function",

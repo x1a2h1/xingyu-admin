@@ -19,6 +19,7 @@ export const layouts: Record<string, () => Promise<any>> = {
 export const pages: Record<string, () => Promise<any>> = {
 "(base)_about": () => import("@/pages/(base)/about/index.tsx"),
 "(base)_app-manage": () => import("@/pages/(base)/app-manage/index.tsx"),
+"(base)_build-manage": () => import("@/pages/(base)/build-manage/index.tsx"),
 "(base)_channel-manage": () => import("@/pages/(base)/channel-manage/index.tsx"),
 "(base)_entity-manage": () => import("@/pages/(base)/entity-manage/index.tsx"),
 "(base)_function_event-bus": () => import("@/pages/(base)/function/event-bus/index.tsx"),
