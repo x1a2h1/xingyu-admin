@@ -30,6 +30,9 @@ declare module "@soybean-react/vite-plugin-react-router" {
     "document_antd": "/document/antd";
     "document_ui": "/document/ui";
     "(base)_about": "/about";
+    "(base)_ads-slot-manage": "/ads-slot-manage";
+    "(base)_ads-slot-manage_batch": "/ads-slot-manage/batch";
+    "(base)_ads-slot-manage_create": "/ads-slot-manage/create";
     "(base)_app-manage": "/app-manage";
     "(base)_build-manage": "/build-manage";
     "(base)_channel-manage": "/channel-manage";
@@ -149,6 +152,9 @@ declare module "@soybean-react/vite-plugin-react-router" {
   export type LastLevelRouteKey = Extract<
     RouteKey,
     | "(base)_about"
+    | "(base)_ads-slot-manage_batch"
+    | "(base)_ads-slot-manage_create"
+    | "(base)_ads-slot-manage"
     | "(base)_app-manage"
     | "(base)_build-manage"
     | "(base)_channel-manage"

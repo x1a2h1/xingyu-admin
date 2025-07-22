@@ -1,5 +1,8 @@
 const route: App.I18n.Schema['translation']['route'] = {
   '(base)_about': '关于',
+  '(base)_ads-slot-manage': '代码位管理',
+  '(base)_ads-slot-manage_batch': '批量创建代码位',
+  '(base)_ads-slot-manage_create': '创建代码位',
   '(base)_app-manage': '应用管理',
   '(base)_build-manage': '打包配置',
   '(base)_channel-manage': '渠道管理',

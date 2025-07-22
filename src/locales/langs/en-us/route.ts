@@ -1,5 +1,8 @@
 const route: App.I18n.Schema['translation']['route'] = {
   '(base)_about': 'About',
+  '(base)_ads-slot-manage': 'Ads Slot Manage',
+  '(base)_ads-slot-manage_batch': 'Batch Create Ads Slot',
+  '(base)_ads-slot-manage_create': 'Create Ads Slot',
   '(base)_app-manage': 'App Manage',
   '(base)_build-manage': 'Build Manage',
   '(base)_channel-manage': 'Channel Manage',
