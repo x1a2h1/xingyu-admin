@@ -110,7 +110,7 @@ export const WithdrawalTable = ({
     },
     {
       align: 'center',
-      dataIndex: ['app', 'app_name'],
+      dataIndex: 'app_name',
       ellipsis: true,
       key: 'app_name',
       title: '应用',
@@ -118,7 +118,7 @@ export const WithdrawalTable = ({
     },
     {
       align: 'center',
-      dataIndex: ['app_chan', 'name'],
+      dataIndex: 'app_chan_name',
       ellipsis: true,
       key: 'app_chan_name',
       title: '渠道',
@@ -126,7 +126,7 @@ export const WithdrawalTable = ({
     },
     {
       align: 'center',
-      dataIndex: ['entity', 'name'],
+      dataIndex: 'entity_name',
       ellipsis: true,
       key: 'entity_name',
       title: '主体'

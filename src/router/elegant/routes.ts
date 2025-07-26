@@ -43,13 +43,21 @@ export const generatedRoutes: ElegantConstRoute[] = [
                 matchedFiles: [null, '/src/pages/(base)/ads-slot-manage/batch/index.tsx', null, null],
                 name: '(base)_ads-slot-manage_batch',
                 path: '/ads-slot-manage/batch',
-                handle: { i18nKey: 'route.(base)_ads-slot-manage_batch', hideInMenu:true, title: '(base)_ads-slot-manage_batch' }
+                handle: {
+                  i18nKey: 'route.(base)_ads-slot-manage_batch',
+                  hideInMenu: true,
+                  title: '(base)_ads-slot-manage_batch'
+                }
               },
               {
                 matchedFiles: [null, '/src/pages/(base)/ads-slot-manage/create/index.tsx', null, null],
                 name: '(base)_ads-slot-manage_create',
                 path: '/ads-slot-manage/create',
-                handle: { i18nKey: 'route.(base)_ads-slot-manage_create',	hideInMenu:true, title: '(base)_ads-slot-manage_create' }
+                handle: {
+                  i18nKey: 'route.(base)_ads-slot-manage_create',
+                  hideInMenu: true,
+                  title: '(base)_ads-slot-manage_create'
+                }
               }
             ]
           },

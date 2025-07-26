@@ -363,20 +363,24 @@ declare namespace Api {
   namespace Withdraw {
     type Info = base & {
       amount: number;
-      app?: Application.Info;
-      app_chan?: AppChan.Info;
-      entity?: Entity.Entity;
-      id: number;
+      app_chan_name: string; // 冗余字段信息
+      app_name: string;
+      channel_name: string;
+      entity_name: string;
       identity: string;
-      operator_name?: string;
-      operator_remarks?: string;
+      operator_name: string;
+      operator_remarks: string;
       out_biz_no: string;
       pay_fund_order_id?: string;
+      // 保留的支付订单字段（后端协商中）
       payment_order_id?: string;
+
+      // 单位为"元"
       platform: string;
       processed_at?: number;
       real_name: string;
-      remarks?: string;
+      remarks: string;
+
       status: 'approved' | 'failed' | 'paid' | 'pending' | 'rejected';
       uid: string;
     };

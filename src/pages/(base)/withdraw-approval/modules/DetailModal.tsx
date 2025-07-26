@@ -126,9 +126,9 @@ export const DetailModal = ({ onClose, open, record }: DetailModalProps) => {
             </Descriptions.Item>
             <Descriptions.Item label="真实姓名">{record.real_name}</Descriptions.Item>
             <Descriptions.Item label="收款账号">{record.identity}</Descriptions.Item>
-            <Descriptions.Item label="应用名称">{record.app?.app_name || '-'}</Descriptions.Item>
-            <Descriptions.Item label="渠道名称">{record.app_chan?.name || '-'}</Descriptions.Item>
-            <Descriptions.Item label="主体名称">{record.entity?.name || '-'}</Descriptions.Item>
+            <Descriptions.Item label="应用名称">{record.app_name || '-'}</Descriptions.Item>
+            <Descriptions.Item label="渠道名称">{record.app_chan_name || '-'}</Descriptions.Item>
+            <Descriptions.Item label="主体名称">{record.entity_name || '-'}</Descriptions.Item>
             <Descriptions.Item label="当前状态">
               <Tag color={getStatusColor(record.status)}>{getStatusText(record.status)}</Tag>
             </Descriptions.Item>
@@ -175,18 +175,22 @@ export const DetailModal = ({ onClose, open, record }: DetailModalProps) => {
               >
                 <span className="break-all text-sm leading-normal font-mono">{record.out_biz_no || '-'}</span>
               </Descriptions.Item>
-              <Descriptions.Item
-                label="支付订单号"
-                style={{ padding: '8px 12px' }}
-              >
-                <span className="break-all text-sm leading-normal font-mono">{record.payment_order_id || '-'}</span>
-              </Descriptions.Item>
-              <Descriptions.Item
-                label="资金流水号"
-                style={{ padding: '8px 12px' }}
-              >
-                <span className="break-all text-sm leading-normal font-mono">{record.pay_fund_order_id || '-'}</span>
-              </Descriptions.Item>
+              {record.payment_order_id && (
+                <Descriptions.Item
+                  label="支付订单号"
+                  style={{ padding: '8px 12px' }}
+                >
+                  <span className="break-all text-sm leading-normal font-mono">{record.payment_order_id}</span>
+                </Descriptions.Item>
+              )}
+              {record.pay_fund_order_id && (
+                <Descriptions.Item
+                  label="资金流水号"
+                  style={{ padding: '8px 12px' }}
+                >
+                  <span className="break-all text-sm leading-normal font-mono">{record.pay_fund_order_id}</span>
+                </Descriptions.Item>
+              )}
               {record.remarks && (
                 <Descriptions.Item
                   label="系统备注"
