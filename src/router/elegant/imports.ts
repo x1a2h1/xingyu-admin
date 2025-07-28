@@ -50,6 +50,8 @@ export const pages: Record<string, () => Promise<any>> = {
 "(base)_multi-menu_second_child_home": () => import("@/pages/(base)/multi-menu/second/child/home/index.tsx"),
 "(base)_multi-menu_second_child": () => import("@/pages/(base)/multi-menu/second/child/index.tsx"),
 "(base)_multi-menu_second": () => import("@/pages/(base)/multi-menu/second/index.tsx"),
+"(base)_player-manage_ad-records_[uid]": () => import("@/pages/(base)/player-manage/ad-records/[uid].tsx"),
+"(base)_player-manage": () => import("@/pages/(base)/player-manage/index.tsx"),
 "(base)_projects_[pid]_edit_[id]": () => import("@/pages/(base)/projects/[pid]/edit/[id].tsx"),
 "(base)_projects_[pid]_edit": () => import("@/pages/(base)/projects/[pid]/edit/index.tsx"),
 "(base)_projects_[pid]": () => import("@/pages/(base)/projects/[pid]/index.tsx"),

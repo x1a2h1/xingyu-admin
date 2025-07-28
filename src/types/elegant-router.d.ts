@@ -62,6 +62,9 @@ declare module "@soybean-react/vite-plugin-react-router" {
     "(base)_multi-menu_second": "/multi-menu/second";
     "(base)_multi-menu_second_child": "/multi-menu/second/child";
     "(base)_multi-menu_second_child_home": "/multi-menu/second/child/home";
+    "(base)_player-manage": "/player-manage";
+    "(base)_player-manage_ad-records": "/player-manage/ad-records";
+    "(base)_player-manage_ad-records_[uid]": "/player-manage/ad-records/:uid";
     "(base)_projects": "/projects";
     "(base)_projects_[pid]": "/projects/:pid";
     "(base)_projects_[pid]_edit": "/projects/:pid/edit";
@@ -185,6 +188,8 @@ declare module "@soybean-react/vite-plugin-react-router" {
     | "(base)_multi-menu_second_child_home"
     | "(base)_multi-menu_second_child"
     | "(base)_multi-menu_second"
+    | "(base)_player-manage_ad-records_[uid]"
+    | "(base)_player-manage"
     | "(base)_projects_[pid]_edit_[id]"
     | "(base)_projects_[pid]_edit"
     | "(base)_projects_[pid]"

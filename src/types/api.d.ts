@@ -444,4 +444,90 @@ declare namespace Api {
     };
     type List = PageableData<Info>;
   }
+
+  namespace Player {
+    type Info = {
+      /** 用户余额 */
+      balance: string;
+      /** 余额更新时间秒时间戳 */
+      balance_update_time: string;
+      /** 封禁原因 */
+      ban_reason: string;
+      /** 封禁更新时间秒时间戳 */
+      ban_update_time: string;
+      /** 渠道id */
+      channel_id: string;
+      /** 创建时间秒时间戳 */
+      create_time: string;
+      /** 主键ID */
+      id: number;
+      /** 是否封禁 0-否 1-是 */
+      is_banned: boolean;
+      /** 是否被标记 0-否 1-是 */
+      is_marked: boolean;
+      /** 最近登录时间秒时间戳 */
+      last_login_time: string;
+      /** 等级更新时间秒时间戳 */
+      level_update_time: string;
+      /** 登录状态 */
+      login_status: number;
+      /** 1:微信 2:游客 */
+      login_type: string;
+      /** 标记更新时间秒时间戳 */
+      mark_update_time: string;
+      /** 手机号 */
+      phone_number: string;
+      /** 真实姓名 */
+      real_name: string;
+      /** 用户历史金币总和 */
+      total_coins: string;
+      /** 用户标识 */
+      uid: string;
+      /** 用户等级 0-4 */
+      user_level: number;
+      /** 用户名 */
+      user_name: string;
+      /** 用户提现总和 */
+      withdrawal_total: string;
+    };
+    /** 玩家详情 */
+    type Detail = {
+      /** 应用渠道名称 */
+      app_chan_name: string;
+      /** 应用名称 */
+      app_name: string;
+      /** 主体公司名称 */
+      entity_name: string;
+      /** 玩家UID */
+      uid: string;
+    };
+    type AdRecords = PageableData<Report.Ad_Record>;
+    type List = PageableData<Info>;
+  }
+  namespace Report {
+    /** 广告记录 */
+    type Ad_Record = {
+      /** 广告ID */
+      ad_id: string;
+      /** 广告平台 */
+      ad_platform: string;
+      /** 广告类型 */
+      ad_type: string;
+      /** 应用ID */
+      app_id: string;
+      /** 折扣eCPM */
+      discount_ecpm: number;
+      /** eCPM */
+      ecpm: number;
+      /** 游戏名称 */
+      game_name: string;
+      /** 主键ID */
+      id: number;
+      /** 用户UID */
+      uid: string;
+      /** 广告展示时间 */
+      vad_time: string;
+    };
+    type List = PageableData<Ad_Record>;
+  }
 }
