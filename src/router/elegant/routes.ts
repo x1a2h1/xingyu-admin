@@ -359,14 +359,18 @@ export const generatedRoutes: ElegantConstRoute[] = [
                 matchedFiles: [null, null, null, null],
                 name: '(base)_player-manage_ad-records',
                 path: '/player-manage/ad-records',
-                handle: { i18nKey: 'route.(base)_player-manage_ad-records', hideInMenu:true, title: '(base)_player-manage_ad-records' },
+                handle: {
+                  i18nKey: 'route.(base)_player-manage_ad-records',
+                  hideInMenu: true,
+                  title: '(base)_player-manage_ad-records'
+                },
                 children: [
                   {
                     matchedFiles: [null, '/src/pages/(base)/player-manage/ad-records/[uid].tsx', null, null],
                     name: '(base)_player-manage_ad-records_[uid]',
                     path: '/player-manage/ad-records/:uid',
                     handle: {
-											hideInMenu:true,
+                      hideInMenu: true,
                       i18nKey: 'route.(base)_player-manage_ad-records_[uid]',
                       title: '(base)_player-manage_ad-records_[uid]'
                     }
