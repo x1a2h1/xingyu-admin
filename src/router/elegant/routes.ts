@@ -37,7 +37,11 @@ export const generatedRoutes: ElegantConstRoute[] = [
             matchedFiles: [null, '/src/pages/(base)/ads-slot-manage/index.tsx', null, null],
             name: '(base)_ads-slot-manage',
             path: '/ads-slot-manage',
-            handle: { i18nKey: 'route.(base)_ads-slot-manage', title: '(base)_ads-slot-manage' },
+            handle: {
+              i18nKey: 'route.(base)_ads-slot-manage',
+              icon: 'ri-advertisement-fill',
+              title: '(base)_ads-slot-manage'
+            },
             children: [
               {
                 matchedFiles: [null, '/src/pages/(base)/ads-slot-manage/batch/index.tsx', null, null],
@@ -65,31 +69,43 @@ export const generatedRoutes: ElegantConstRoute[] = [
             matchedFiles: [null, '/src/pages/(base)/app-manage/index.tsx', null, null],
             name: '(base)_app-manage',
             path: '/app-manage',
-            handle: { i18nKey: 'route.(base)_app-manage', title: '(base)_app-manage' }
+            handle: {
+              i18nKey: 'route.(base)_app-manage',
+              icon: 'majesticons-applications-add',
+              title: '(base)_app-manage'
+            }
           },
           {
             matchedFiles: [null, '/src/pages/(base)/build-manage/index.tsx', null, null],
             name: '(base)_build-manage',
             path: '/build-manage',
-            handle: { i18nKey: 'route.(base)_build-manage', title: '(base)_build-manage' }
+            handle: {
+              i18nKey: 'route.(base)_build-manage',
+              icon: 'mingcute-package-fill',
+              title: '(base)_build-manage'
+            }
           },
           {
             matchedFiles: [null, '/src/pages/(base)/channel-manage/index.tsx', null, null],
             name: '(base)_channel-manage',
             path: '/channel-manage',
-            handle: { i18nKey: 'route.(base)_channel-manage', title: '(base)_channel-manage' }
+            handle: {
+              i18nKey: 'route.(base)_channel-manage',
+              icon: 'fluent-channel-share-24-filled',
+              title: '(base)_channel-manage'
+            }
           },
           {
             matchedFiles: [null, '/src/pages/(base)/ecpm-manage/index.tsx', null, null],
             name: '(base)_ecpm-manage',
             path: '/ecpm-manage',
-            handle: { i18nKey: 'route.(base)_ecpm-manage', title: '(base)_ecpm-manage' }
+            handle: { i18nKey: 'route.(base)_ecpm-manage', icon: 'mynaui-click-solid', title: '(base)_ecpm-manage' }
           },
           {
             matchedFiles: [null, '/src/pages/(base)/entity-manage/index.tsx', null, null],
             name: '(base)_entity-manage',
             path: '/entity-manage',
-            handle: { i18nKey: 'route.(base)_entity-manage', title: '(base)_entity-manage' }
+            handle: { i18nKey: 'route.(base)_entity-manage', icon: 'mdi-file-compare', title: '(base)_entity-manage' }
           },
           {
             matchedFiles: [null, '/src/pages/(base)/function/index.tsx', null, null],
@@ -353,7 +369,11 @@ export const generatedRoutes: ElegantConstRoute[] = [
             matchedFiles: [null, '/src/pages/(base)/player-manage/index.tsx', null, null],
             name: '(base)_player-manage',
             path: '/player-manage',
-            handle: { i18nKey: 'route.(base)_player-manage', title: '(base)_player-manage' },
+            handle: {
+              i18nKey: 'route.(base)_player-manage',
+              icon: 'mdi-gamepad-variant',
+              title: '(base)_player-manage'
+            },
             children: [
               {
                 matchedFiles: [null, null, null, null],
@@ -429,31 +449,47 @@ export const generatedRoutes: ElegantConstRoute[] = [
             matchedFiles: [null, '/src/pages/(base)/system-manage/index.tsx', null, null],
             name: '(base)_system-manage',
             path: '/system-manage',
-            handle: { i18nKey: 'route.(base)_system-manage', title: '(base)_system-manage' },
+            handle: { i18nKey: 'route.(base)_system-manage', icon: 'mdi:cog', title: '(base)_system-manage' },
             children: [
               {
                 matchedFiles: [null, '/src/pages/(base)/system-manage/menu/index.tsx', null, null],
                 name: '(base)_system-manage_menu',
                 path: '/system-manage/menu',
-                handle: { i18nKey: 'route.(base)_system-manage_menu', title: '(base)_system-manage_menu' }
+                handle: {
+                  i18nKey: 'route.(base)_system-manage_menu',
+                  icon: 'mdi-format-list-numbered',
+                  title: '(base)_system-manage_menu'
+                }
               },
               {
                 matchedFiles: [null, '/src/pages/(base)/system-manage/roles/index.tsx', null, null],
                 name: '(base)_system-manage_roles',
                 path: '/system-manage/roles',
-                handle: { i18nKey: 'route.(base)_system-manage_roles', title: '(base)_system-manage_roles' }
+                handle: {
+                  i18nKey: 'route.(base)_system-manage_roles',
+                  icon: 'mdi:shield-account',
+                  title: '(base)_system-manage_roles'
+                }
               },
               {
                 matchedFiles: [null, '/src/pages/(base)/system-manage/templates/index.tsx', null, null],
                 name: '(base)_system-manage_templates',
                 path: '/system-manage/templates',
-                handle: { i18nKey: 'route.(base)_system-manage_templates', title: '(base)_system-manage_templates' }
+                handle: {
+                  i18nKey: 'route.(base)_system-manage_templates',
+                  icon: 'mdi-note-multiple',
+                  title: '(base)_system-manage_templates'
+                }
               },
               {
                 matchedFiles: [null, '/src/pages/(base)/system-manage/users/index.tsx', null, null],
                 name: '(base)_system-manage_users',
                 path: '/system-manage/users',
-                handle: { i18nKey: 'route.(base)_system-manage_users', title: '(base)_system-manage_users' }
+                handle: {
+                  i18nKey: 'route.(base)_system-manage_users',
+                  icon: 'mdi:account-multiple',
+                  title: '(base)_system-manage_users'
+                }
               },
               {
                 matchedFiles: [
@@ -466,7 +502,8 @@ export const generatedRoutes: ElegantConstRoute[] = [
                 path: '/system-manage/withdrawal-threshold-settings',
                 handle: {
                   i18nKey: 'route.(base)_system-manage_withdrawal-threshold-settings',
-                  title: '(base)_system-manage_withdrawal-threshold-settings'
+                  title: '(base)_system-manage_withdrawal-threshold-settings',
+                  icon: 'mdi-electric-switch-closed'
                 }
               }
             ]
@@ -481,7 +518,11 @@ export const generatedRoutes: ElegantConstRoute[] = [
             matchedFiles: [null, '/src/pages/(base)/withdraw-approval/index.tsx', null, null],
             name: '(base)_withdraw-approval',
             path: '/withdraw-approval',
-            handle: { i18nKey: 'route.(base)_withdraw-approval', title: '(base)_withdraw-approval' }
+            handle: {
+              i18nKey: 'route.(base)_withdraw-approval',
+              icon: 'hugeicons-bitcoin-withdraw',
+              title: '(base)_withdraw-approval'
+            }
           }
         ],
         path: null
