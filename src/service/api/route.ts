@@ -10,6 +10,10 @@ export function fetchGetUserRoutes() {
   return request<Api.Route.UserRoute>({ url: '/route/getReactUserRoutes' });
 }
 
+export function fetchGetUserRoutePaths() {
+  return request<Api.Route.UserRoute>({ url: '/route/paths' });
+}
+
 /**
  * whether the route is exist
  *

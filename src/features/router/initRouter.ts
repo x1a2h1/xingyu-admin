@@ -1,7 +1,7 @@
 import type { RouteObject } from 'react-router-dom';
 
 import { authRoutes } from '@/router';
-import { fetchGetUserRoutes } from '@/service/api';
+import { fetchGetUserRoutePaths } from '@/service/api';
 import { store } from '@/store';
 
 import { isStaticSuper, selectUserInfo } from '../auth/authStore';
@@ -29,6 +29,7 @@ export async function initAuthRoutes(addRoutes: (parent: string | null, route: R
       // 非超级管理员
       const roles: string[] = role_list ? role_list.map(role => role.name) : [];
       const filteredRoutes = filterAuthRoutesByRoles(reactAuthRoutes, roles);
+      console.log(reactAuthRoutes);
 
       filteredRoutes.forEach(({ parent, route }) => {
         addRoutes(parent, route);
@@ -36,7 +37,7 @@ export async function initAuthRoutes(addRoutes: (parent: string | null, route: R
     }
   } else {
     // 动态模式
-    const { data, error } = await fetchGetUserRoutes();
+    const { data, error } = await fetchGetUserRoutePaths();
     if (error) {
       console.error(error);
       return;

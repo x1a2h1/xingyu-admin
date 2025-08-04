@@ -315,7 +315,7 @@ export const generatedRoutes: ElegantConstRoute[] = [
             matchedFiles: [null, '/src/pages/(base)/multi-menu/index.tsx', null, null],
             name: '(base)_multi-menu',
             path: '/multi-menu',
-            handle: { constant: true, i18nKey: 'route.(base)_multi-menu', order: 5, title: 'multi-menu' },
+            handle: { constant: false, i18nKey: 'route.(base)_multi-menu', order: 5, title: 'multi-menu' },
             children: [
               {
                 matchedFiles: [null, '/src/pages/(base)/multi-menu/first/index.tsx', null, null],
