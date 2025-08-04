@@ -41,7 +41,7 @@ export function fetchDeleteRole(id: number, data?: any) {
 }
 
 /** 更新角色菜单权限 */
-export function fetchUpdateRoleMenu(id: number, data: { menu_ids: React.Key[] }) {
+export function fetchUpdateRoleMenu(id: number, data: { ids: React.Key[] }) {
   return request<null>({
     data,
     method: 'put',

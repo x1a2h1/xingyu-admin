@@ -77,7 +77,7 @@ const Roles = () => {
     if (!currentRecord) return;
 
     try {
-      await fetchUpdateRoleMenu(currentRecord.id, { menu_ids: selectedKeys });
+      await fetchUpdateRoleMenu(currentRecord.id, { ids: selectedKeys });
       message.success('权限分配成功');
       setAssignPermissionModalOpen(false);
       await handleSearch(pagination.current, pagination.pageSize);
