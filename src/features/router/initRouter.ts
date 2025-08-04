@@ -29,8 +29,6 @@ export async function initAuthRoutes(addRoutes: (parent: string | null, route: R
       // 非超级管理员
       const roles: string[] = role_list ? role_list.map(role => role.name) : [];
       const filteredRoutes = filterAuthRoutesByRoles(reactAuthRoutes, roles);
-      console.log(reactAuthRoutes);
-
       filteredRoutes.forEach(({ parent, route }) => {
         addRoutes(parent, route);
       });
